@@ -39,3 +39,10 @@ describe('the static files are served correctly', () => {
   });
   
 });
+
+test('missing memes return 404', async (done) => {
+  supertest(app)
+    .get('/ERROR-NO-MEME-HERE')
+    .expect(404)
+    .then(()=>done());
+});
