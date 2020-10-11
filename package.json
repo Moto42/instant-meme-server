@@ -2,7 +2,7 @@
   "name": "instant-meme-server",
   "version": "1.0.0",
   "description": "A server that build memes on demand; cooked to order.",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "jest"
   },
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/Moto42/instant-meme-server#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "instant-meme": "^2.0.1"
   },
