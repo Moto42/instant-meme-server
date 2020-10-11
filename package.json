@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/Moto42/instant-meme-server/issues"
   },
-  "homepage": "https://github.com/Moto42/instant-meme-server#readme"
+  "homepage": "https://github.com/Moto42/instant-meme-server#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "instant-meme": "^2.0.1"
+  }
 }
