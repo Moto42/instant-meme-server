@@ -1,0 +1,17 @@
+{
+  "template": "what-have-you-done.png",
+  "font": "OpenSans-Regular.ttf",
+  "font_size": "30px",
+  "texts" : {
+    "t1": {
+      "text":"",
+      "x": 50,
+      "y": 460
+    },
+    "t2": {
+      "text":"",
+      "x": 430,
+      "y": 485
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "template": "lifting-cover.jpg",
+  "font": "OpenSans-Regular.ttf",
+  "font_size": "30px",
+  "texts" : {
+    "t1": {
+      "text":"",
+      "x": 355,
+      "y": 455
+    },
+    "t2": {
+      "text":"",
+      "x": 270,
+      "y": 975
+    }
+  }
+}
