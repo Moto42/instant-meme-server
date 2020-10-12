@@ -1,0 +1,22 @@
+{
+  "template": "billys-agent.jpg",
+  "font": "OpenSans-Regular.ttf",
+  "font_size": "30px",
+  "texts" : {
+    "t1": {
+      "text":"",
+      "x": 335,
+      "y": 245
+    },
+    "t2": {
+      "text":"Oh billy...",
+      "x": 50,
+      "y": 430
+    },
+    "t3": {
+      "text":"I'm so proud of you",
+      "x": 440,
+      "y": 430
+    }
+  }
+}
