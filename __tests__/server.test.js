@@ -61,6 +61,9 @@ test('Will serve a meme', async (done) => {
 describe('meme regression testing', () => {
   const templatesList = [
     'kermit',
+    'agent',
+    'eddy-facts',
+    'worthless',
   ];
   templatesList.forEach(template => {
     test(`/${template}`, async (done) => {
