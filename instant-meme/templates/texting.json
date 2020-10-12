@@ -1,0 +1,18 @@
+{
+  "template": "boy-texting-girl.jpg",
+  "font": "OpenSans-Regular.ttf",
+  "font_size": "30px",
+  "texts" : {
+    "t1": {
+      "text":"",
+      "x": 90,
+      "y": 105
+    },
+    "t2": {
+      "text":"",
+      "x": 750,
+      "y": 725
+    }
+    
+  }
+}
