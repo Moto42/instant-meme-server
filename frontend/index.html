@@ -3,15 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Instant Meme</title>
-  <h1>
-    Instant Meme
-  </h1>
-  <p>This is the frontpage of a REST API for building memes on the fly. I'm building the front end right now.</p>
-  <p>Expect to seee it finished by Noon, Central time, Monday Oct 12</p>
-  <p>In the meantime, checkout <a href="www.wesleyWilliams.dev/portfolio"></a>{my portfolio}.</p>
 </head>
 <body>
-  
+  <header></header>
+  <main>
+    <div class="modal modal--fullscreen" id="instructions"></div>
+    <div id="app">
+      <div id="template_chooser">
+        <div id="template_chooser__button--previous"></div>
+        <canvas id="template_chooser__template"></canvas>
+        <div id="template_chooser__button--next"></div>
+      </div>
+      <div id="inputs"></div>
+      <div id="outputs"></div>
+    </div>
+  </main>
+  <footer>&copy; Wesley Williams 2020 </footer>
 </body>
 </html>
