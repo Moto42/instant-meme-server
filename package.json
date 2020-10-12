@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "jest": "^26.5.3",
+    "jest-image-snapshot": "^4.2.0",
     "supertest": "^5.0.0"
   }
 }
