@@ -62,6 +62,7 @@ describe('meme regression testing', () => {
   const templatesList = [
     'kermit',
     'agent',
+    'eddy-facts',
   ];
   templatesList.forEach(template => {
     test(`/${template}`, async (done) => {
