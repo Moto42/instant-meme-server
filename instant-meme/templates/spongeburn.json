@@ -1,0 +1,12 @@
+{
+  "template": "spongebob-burn.jpg",
+  "font": "OpenSans-Regular.ttf",
+  "font_size": "30px",
+  "texts" : {
+    "t1": {
+      "text":"",
+      "x": 125,
+      "y": 165
+    }
+  }
+}
