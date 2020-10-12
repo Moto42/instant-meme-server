@@ -1,0 +1,17 @@
+{
+  "template": "kermit-tea.jpeg",
+  "font": "OpenSans-Regular.ttf",
+  "font_size": "30px",
+  "texts" : {
+    "t1": {
+      "text":"",
+      "x": 10,
+      "y": 20
+    },
+    "t2": {
+      "text":"But that's none of my business",
+      "x": 10,
+      "y": 325
+    }
+  }
+}
