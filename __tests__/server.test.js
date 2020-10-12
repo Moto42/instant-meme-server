@@ -59,13 +59,18 @@ test('Will serve a meme', async (done) => {
 });
 
 describe('meme regression testing', () => {
-  test('Will serve a meme', async (done) => {
-    supertest(app)
-      .get('/kermit?t1=Neighbors complain about flies near their house')
-      .expect(200)
-      .expect('Content-Type', 'image/png')
-      .then((res) => { expect(res.body).toMatchImageSnapshot(); })
-      .then(()=>done())
-      .catch(e => {throw e} );
+  const templatesList = [
+    'kermit',
+  ];
+  templatesList.forEach(template => {
+    test(`/${template}`, async (done) => {
+      supertest(app)
+        .get(`/${template}?t1=Neighbors complain about flies near their house`)
+        .expect(200)
+        .expect('Content-Type', 'image/png')
+        .then((res) => { expect(res.body).toMatchImageSnapshot(); })
+        .then(()=>done())
+        .catch(e => {throw e} );
+    });
   });
 });
