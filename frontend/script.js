@@ -61,11 +61,19 @@ function textInputDiv(text, tid=null) {
   const textbox = document.createElement('input');
   textbox.classList.add('textInput');
   if(tid) textbox.dataset.tid = tid;
+  if(tid) textbox.placeholder = tid;
   textbox.value = text;
 
   container.appendChild(textbox);
+  if(text != ''){
+    const defaultNotice = document.createElement('div');
+    defaultNotice.classList.add('textInput__default')
+    defaultNotice.innerText = `Defaults to: "${text}"`;
+    container.appendChild(defaultNotice);
+  }
   return container;
 }
+
 
 async function setupInputs(template){
   const inputsDiv = document.getElementById('inputs');
@@ -93,6 +101,7 @@ async function setupCanvas(template,memeName){
 
 async function setupMeme(memeNumber){
   const memeName = memesList[memeNumber];
+  document.getElementById('memeNameDisplay__name').innerText = memeName;
   const template = await loadMemeTemplate(memeName);
   setupCanvas(template,memeName);
   setupInputs(template);
