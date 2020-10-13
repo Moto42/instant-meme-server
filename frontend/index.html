@@ -7,9 +7,9 @@
   <title>Instant Meme</title>
 </head>
 <body>
-  <header></header>
+  <header>
+  </header>
   <main>
-    <div class="modal modal--hidden" id="instructions"></div>
     <div id="app">
       <div class="app__left" id="template_chooser">
         <div class="template_chooser__button halfbutton--left" id="template_chooser__button--previous">
@@ -33,8 +33,76 @@
         <div id="inputs"></div>
       </div>
     </div>
+    
+    <div class="modal " id="instructions">
+      <div class="modal__content">
+        <div id="modal__close">Close <span class="button_close">X</span></div>
+        <h1>How to use</h1>
+        <h2>What have you done?</h2>
+          <p>
+            Instant-Meme is a service that lets you build text-on-image 'memes' by quickly describing
+            them in the URL linking to the image.
+          </p>
+        <h2>Why did you do this?</h2>
+          <p>
+            Building memes on a website or in photoshopt gets the job done, but it pulls you out of the
+            conversation for to long when you just want to drop the image in chat. When you have a great idea 
+            for a good joke, a five minute delay will destroy the timing.
+          </p>
+        <h2>How does this work?</h2>
+          <details>
+            <summary class="txt--small">Click to open</summary>
+            <p>To define a custom meme on-the-fly, you just link to it with the following format</p>
+            <code>
+              https://instant-meme.herokuapp.com/<span class="txt--blue">meme-name.png</span>?<span class="txt--gold">t1=first block of text</span>&<span class="txt--gold">t2=next block of text</span>
+            </code>
+            <h3>Heres a part by part breakdown of the above</h3>
+            <ul>
+              <li>
+                <h4>https://instant-meme.herokuapp.com/</h4>
+                <p>Just the url pointing to the Instant-Meme server. Nothing special so far</p>
+              </li>
+              <li>
+                <h4 class="txt--blue">meme-name.png</h4>
+                <p>The name of the meme template you wish to use. You can see a full list of the available temlates below.</p>
+              </li>
+              <li>
+                <h4>?</h4>
+                <p>Required control character. The question mark tells the server where the address ends, and your options begin.
+              </li>
+              <li>
+                <h4 class="txt--gold">t1=first block of text</h4>
+                <p>
+                  The first text block.<br>
+                  The <code>t1=</code> identifies it as the first code block.<br>
+                  The <code>&amp;</code> tells the server that this is the end of this block, and another one it following.
+                </p>
+              </li>
+              <li>
+                <h4 class="txt--gold">t2=next block of text</h4>
+                <p>
+                  The final block of text. Again, it is identified as the second block by the <code>t2=</code>. No 
+                  <code>&amp;</code> is needed after this one, because there will be nothing following it.
+                </p>
+              </li>
+            </ul>
+          </details>
+        <h2>All the available templates.</h2>
+          <div class="memeLibrary">
+          </div>
+      </div>
+    </div>
+    
   </main>
   <footer>&copy; Wesley Williams 2020 </footer>
   <script src="./script.js"></script>
+  <script>//Instructions Modal controls
+    (function() {
+      const modal = document.getElementById('instructions');
+      const modal__close = document.getElementById('modal__close')
+      modal__close.addEventListener('click', ()=> modal.classList.add('modal--hidden'));
+
+    })();
+  </script>
 </body>
 </html>
