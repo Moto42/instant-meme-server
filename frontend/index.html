@@ -11,13 +11,24 @@
   <main>
     <div class="modal modal--fullscreen" id="instructions"></div>
     <div id="app">
-      <div id="template_chooser">
-        <div id="template_chooser__button--previous">&lt;</div>
+      <div class="app__left" id="template_chooser">
+        <div class="template_chooser__button halfbutton--left" id="template_chooser__button--previous">
+          <div>
+            <b>&lt;</b>
+          </div>
+        </div>
         <canvas id="template_chooser__template"></canvas>
-        <div id="template_chooser__button--next">&gt;</div>
+        <div class="template_chooser__button halfbutton--right" id="template_chooser__button--next">
+          <div>
+            <b>&gt;</b>
+          </div>
+        </div>
       </div>
-      <div id="inputs"></div>
-      <div id="outputs"></div>
+      <div class="app__right">
+        Text Blocks:
+        <div id="inputs"></div>
+        <div id="outputs"></div>
+      </div>
     </div>
   </main>
   <footer>&copy; Wesley Williams 2020 </footer>

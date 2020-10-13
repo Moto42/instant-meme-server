@@ -4,3 +4,42 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
 }
+
+
+#app {
+  display: flex;
+  margin: 0 1ch;
+}
+
+.app__right{
+  margin-left: 2ch;
+}
+
+#template_chooser {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#template_chooser__template {
+  max-width: 600px;
+}
+
+.template_chooser__button {
+  color: white;
+  cursor: pointer;
+  height: 100%;
+  width: 2ch;
+  background: dimgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.halfbutton--left{
+  border-radius: 1ch 0 0 1ch;
+}
+.halfbutton--right{
+  border-radius: 0 1ch 1ch 0;
+  overflow: hidden;
+}
