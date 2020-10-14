@@ -3,8 +3,52 @@ body {
   margin: 0;
   display: grid;
   grid-template-rows: auto 1fr auto;
+  position: relative;
 }
-
+#hello {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2ch;
+}
+.modal{
+  position: absolute;
+  margin: 0;
+  min-height: 100vh;
+  width: 100%;
+  background-color: rgba(221, 225, 250, 0.9);
+  top: 0;
+  transition: top 2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.modal--hidden {
+  top: -200%;
+}
+.modal__content {
+  margin: 0 auto;
+  max-width: 7in;
+}
+#modal__close {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+}
+.button_close, .button_open{
+  display: inline-block;
+  width: 2.2ch;
+  height: 1.2em;
+  border-radius: 50%;
+  background: red;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 1ch;
+  cursor: pointer;
+}
+.button_open {
+  background: green;
+}
+#modal__open , #modal__close{
+  cursor: pointer;
+}
 
 #app {
   display: flex;
@@ -54,4 +98,11 @@ body {
 }
 .textInput__default {
   font-size: .8rem;
+}
+
+.txt--blue {
+  color: blue;
+}
+.txt--gold {
+  color: goldenrod;
 }
