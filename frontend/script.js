@@ -74,6 +74,20 @@ function textInputDiv(text, tid=null) {
   return container;
 }
 
+function upDateMemeURLTextBlocksFromArray(array){
+  console.log(array);
+  if(Object.entries.length > 0) {
+    let textBlocks = '?';
+    for(let i in array) {
+      const key = array[i][0];
+      const value = array[i][1];
+      textBlocks += key+'='+encodeURIComponent(value);
+      if(i != array.length-1) textBlocks += '&';
+    };
+    const meme_textBlocks = document.getElementById('memeURL__texts');
+    meme_textBlocks.innerText = textBlocks;
+  }
+}
 
 async function setupInputs(template){
   const inputsDiv = document.getElementById('inputs');
@@ -102,18 +116,9 @@ async function setupOutputs(template, memeName){
   const url_name = document.getElementById('memeURL__name');
   url_name.innerText = memeName;
 
-  const texts = Object.entries(template.texts);
-  if(Object.entries.length > 0) {
-    let textBlocks = '?';
-    for(let i in texts) {
-      const key = texts[i][0];
-      const value = texts[i][1].text;
-      textBlocks += key+'='+value;
-      if(i != texts.length-1) textBlocks += '&';
-    };
-    const meme_textBlocks = document.getElementById('memeURL__texts');
-    meme_textBlocks.innerText = textBlocks;
-  }
+  const texts = Object.entries(template.texts).map(entry => [entry[0], entry[1].text]);
+
+  upDateMemeURLTextBlocksFromArray(texts);
 }
 async function setupMeme(memeNumber){
   const memeName = memesList[memeNumber];
@@ -124,6 +129,7 @@ async function setupMeme(memeNumber){
   setupOutputs(template,memeName);
 }
 
+
 async function updateMemeFromInputs(){
   const inputs = document.getElementsByClassName('textInput');
   let imageURL = `/${memesList[currentMeme]}?`;
@@ -133,9 +139,14 @@ async function updateMemeFromInputs(){
   const canvas = document.getElementById('template_chooser__template');
   imageLoader(canvas,imageURL);
 }
+async function updateMemeURLFromInputs(){
+  const textInputs = Array.from(document.getElementsByClassName('textInput')).map(node => [node.dataset.tid, node.value]);
+    upDateMemeURLTextBlocksFromArray(textInputs);
+}
 
 function inputChangeHandler(event){
   updateMemeFromInputs();
+  updateMemeURLFromInputs();
 }
 
 setupMeme(currentMeme);
