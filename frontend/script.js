@@ -98,13 +98,30 @@ async function setupCanvas(template,memeName){
   }
   imageLoader(canvas,imageSource);
 }
+async function setupOutputs(template, memeName){
+  const url_name = document.getElementById('memeURL__name');
+  url_name.innerText = memeName;
 
+  const texts = Object.entries(template.texts);
+  if(Object.entries.length > 0) {
+    let textBlocks = '?';
+    for(let i in texts) {
+      const key = texts[i][0];
+      const value = texts[i][1].text;
+      textBlocks += key+'='+value;
+      if(i != texts.length-1) textBlocks += '&';
+    };
+    const meme_textBlocks = document.getElementById('memeURL__texts');
+    meme_textBlocks.innerText = textBlocks;
+  }
+}
 async function setupMeme(memeNumber){
   const memeName = memesList[memeNumber];
   document.getElementById('memeNameDisplay__name').innerText = memeName;
   const template = await loadMemeTemplate(memeName);
   setupCanvas(template,memeName);
   setupInputs(template);
+  setupOutputs(template,memeName);
 }
 
 async function updateMemeFromInputs(){
