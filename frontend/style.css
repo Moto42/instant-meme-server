@@ -5,7 +5,11 @@ body {
   grid-template-rows: auto 1fr auto;
   position: relative;
 }
-
+#hello {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2ch;
+}
 .modal{
   position: absolute;
   margin: 0;
@@ -27,7 +31,7 @@ body {
   justify-content: end;
   width: 100%;
 }
-.button_close, #modal__open{
+.button_close, .button_open{
   display: inline-block;
   width: 2.2ch;
   height: 1.2em;
@@ -39,10 +43,10 @@ body {
   margin: 0 1ch;
   cursor: pointer;
 }
-#modal__open {
+.button_open {
   background: green;
 }
-#modal_open__container {
+#modal__open , #modal__close{
   cursor: pointer;
 }
 
