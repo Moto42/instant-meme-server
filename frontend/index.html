@@ -11,7 +11,21 @@
   </header>
   <main>
     <div id="hello">
-      <div id="modal_open__container">Open Instructions <span id="modal__open">•</span></div>
+      <div>
+        <p>
+          This page will let you build a meme with this form, and either download it as a .png, or 
+          copy the URL. However, the real magic of Instant-Meme is the ease with which you can build 
+          a meme, just by putting the details in the URL.
+        </p>
+        <p id="modal_open__container"><span id="modal__open">For more information, Click Here <span class="button_open">•</span></span></p>
+      </div>
+      <div>
+        <p>
+          Instant-Meme was built by Wesley Williams, and Wesley Williams is looking for a software
+          developement position in the New York City area. Please <a href="wwww.wesleyWilliams.dev">visit
+          his website</a>, check out his resume, and hire him.
+        </p>
+      </div>
     </div>
     <div id="app">
       <div class="app__left" id="template_chooser">
@@ -100,10 +114,10 @@
       <script defer>//Instructions Modal controls
         (function() {
           const modal = document.getElementById('instructions');
-          const modal__close = document.getElementById('modal__close');
-          const modal__open = document.getElementById('modal__open');
-          modal__close.addEventListener('click', ()=> modal.classList.add('modal--hidden'));
-          modal__open.addEventListener('click',() => modal.classList.remove('modal--hidden'));
+          const close = document.getElementById('modal__close');
+          const open = document.getElementById('modal__open');
+          close.addEventListener('click', ()=> modal.classList.add('modal--hidden'));
+          open.addEventListener('click',() => modal.classList.remove('modal--hidden'));
         })();
       </script>
     </div>

@@ -42,6 +42,9 @@ body {
 #modal__open {
   background: green;
 }
+#modal_open__container {
+  cursor: pointer;
+}
 
 #app {
   display: flex;
