@@ -52,13 +52,23 @@ body {
 
 #app {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin: 0 1ch;
 }
 
+.app__top {
+  width: 100%;
+  display: flex;
+}
+#memeURL {
+  flex-grow: 1;
+}
 .app__right{
   margin-left: 2ch;
   flex-grow: 1;
 }
+
 
 #template_chooser {
   display: flex;

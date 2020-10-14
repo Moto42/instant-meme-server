@@ -74,6 +74,19 @@ function textInputDiv(text, tid=null) {
   return container;
 }
 
+function upDateMemeURLTextBlocksFromArray(array){
+  if(Object.entries.length > 0) {
+    let textBlocks = '?';
+    for(let i in array) {
+      const key = array[i][0];
+      const value = array[i][1];
+      textBlocks += key+'='+encodeURIComponent(value);
+      if(i != array.length-1) textBlocks += '&';
+    };
+    const meme_textBlocks = document.getElementById('memeURL__texts');
+    meme_textBlocks.innerText = textBlocks;
+  }
+}
 
 async function setupInputs(template){
   const inputsDiv = document.getElementById('inputs');
@@ -98,13 +111,33 @@ async function setupCanvas(template,memeName){
   }
   imageLoader(canvas,imageSource);
 }
+async function setupOutputs(template, memeName){
+  const url_name = document.getElementById('memeURL__name');
+  url_name.innerText = memeName;
 
+  const texts = Object.entries(template.texts).map(entry => [entry[0], entry[1].text]);
+
+  upDateMemeURLTextBlocksFromArray(texts);
+}
 async function setupMeme(memeNumber){
   const memeName = memesList[memeNumber];
   document.getElementById('memeNameDisplay__name').innerText = memeName;
   const template = await loadMemeTemplate(memeName);
   setupCanvas(template,memeName);
   setupInputs(template);
+  setupOutputs(template,memeName);
+}
+
+function copyMemeURL(){
+  const urlText = document.getElementById('memeURL').innerText;
+  const urlContainer = document.createElement('input');
+  urlContainer.value = urlText;
+  urlContainer.style.position = 'absolute';
+  document.body.appendChild(urlContainer);
+  urlContainer.select();
+  urlContainer.setSelectionRange(0, 99999); /*For mobile devices*/
+  document.execCommand("copy");
+  urlContainer.remove();
 }
 
 async function updateMemeFromInputs(){
@@ -116,11 +149,17 @@ async function updateMemeFromInputs(){
   const canvas = document.getElementById('template_chooser__template');
   imageLoader(canvas,imageURL);
 }
+async function updateMemeURLFromInputs(){
+  const textInputs = Array.from(document.getElementsByClassName('textInput')).map(node => [node.dataset.tid, node.value]);
+    upDateMemeURLTextBlocksFromArray(textInputs);
+}
 
 function inputChangeHandler(event){
   updateMemeFromInputs();
+  updateMemeURLFromInputs();
 }
 
 setupMeme(currentMeme);
 document.getElementById('template_chooser__button--previous').addEventListener('click', previousMeme);
 document.getElementById('template_chooser__button--next').addEventListener('click', nextMeme);
+document.getElementById('memeURL_copyButton').addEventListener('click', copyMemeURL);
