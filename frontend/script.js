@@ -75,7 +75,6 @@ function textInputDiv(text, tid=null) {
 }
 
 function upDateMemeURLTextBlocksFromArray(array){
-  console.log(array);
   if(Object.entries.length > 0) {
     let textBlocks = '?';
     for(let i in array) {
@@ -129,6 +128,17 @@ async function setupMeme(memeNumber){
   setupOutputs(template,memeName);
 }
 
+function copyMemeURL(){
+  const urlText = document.getElementById('memeURL').innerText;
+  const urlContainer = document.createElement('input');
+  urlContainer.value = urlText;
+  urlContainer.style.position = 'absolute';
+  document.body.appendChild(urlContainer);
+  urlContainer.select();
+  urlContainer.setSelectionRange(0, 99999); /*For mobile devices*/
+  document.execCommand("copy");
+  urlContainer.remove();
+}
 
 async function updateMemeFromInputs(){
   const inputs = document.getElementsByClassName('textInput');
@@ -152,3 +162,4 @@ function inputChangeHandler(event){
 setupMeme(currentMeme);
 document.getElementById('template_chooser__button--previous').addEventListener('click', previousMeme);
 document.getElementById('template_chooser__button--next').addEventListener('click', nextMeme);
+document.getElementById('memeURL_copyButton').addEventListener('click', copyMemeURL);
