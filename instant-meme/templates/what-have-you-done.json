@@ -5,13 +5,15 @@
   "texts" : {
     "t1": {
       "text":"",
-      "x": 50,
-      "y": 460
+      "x": 47,
+      "y": 460,
+      "maxwidth": 281
     },
     "t2": {
-      "text":"",
+      "text":"I was wrong to doubt you, Billy.",
       "x": 430,
-      "y": 485
+      "y": 485,
+      "maxwidth": 156
     }
   }
 }

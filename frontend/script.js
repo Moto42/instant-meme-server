@@ -10,6 +10,7 @@ const memesList = [
   'no-yes',
   'spidermen',
   'spongeburn',
+  'texting',
   'what-have-you-done',
   'worthless',
 ];
