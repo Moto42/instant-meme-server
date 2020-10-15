@@ -110,3 +110,21 @@ body {
 .txt--gold {
   color: goldenrod;
 }
+
+.memeLibrary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-height: 24in;
+}
+.memeLibrary figure {
+  margin: 15px;
+}
+.memeLibrary img {
+  max-width: 190px;
+  transition: max-height 1.5s ease;
+}
+.modal--hidden img {
+  max-height: 0px;
+}
