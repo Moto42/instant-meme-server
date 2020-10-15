@@ -6,17 +6,20 @@
     "t1": {
       "text":"",
       "x": 335,
-      "y": 245
+      "y": 245,
+      "maxwidth": 404
     },
     "t2": {
       "text":"Oh billy...",
       "x": 50,
-      "y": 430
+      "y": 430,
+      "maxwidth": 290
     },
     "t3": {
       "text":"I'm so proud of you",
       "x": 440,
-      "y": 430
+      "y": 430,
+      "maxwidth": 317
     }
   }
 }
