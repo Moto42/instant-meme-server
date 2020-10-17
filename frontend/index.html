@@ -115,59 +115,59 @@
           <p>Alternativly, heres is a gallery of the available templates, and their names</p>
           <div class="memeLibrary">
             <figure>
-              <img src="/agent">
+              <img class="img--defered" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="/agent">
               <figcaption>agent</figcaption>
             </figure>
             <figure>
-              <img src="/already-dead">
+              <img class="img--defered" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="/already-dead">
               <figcaption>already-dead</figcaption>
             </figure>
             <figure>
-              <img src="/awsome-awkward">
+              <img class="img--defered" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="/awsome-awkward">
               <figcaption>awsome-awkward</figcaption>
             </figure>
             <figure>
-              <img src="/brain-sleep">
+              <img class="img--defered" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="/brain-sleep">
               <figcaption>brain-sleep</figcaption>
             </figure>
             <figure>
-              <img src="/eddy-facts">
+              <img class="img--defered" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="/eddy-facts">
               <figcaption>eddy-facts</figcaption>
             </figure>
             <figure>
-              <img src="/kermit">
+              <img class="img--defered" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="/kermit">
               <figcaption>kermit</figcaption>
             </figure>
             <figure>
-              <img src="/lifting-cover">
+              <img class="img--defered" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="/lifting-cover">
               <figcaption>lifting-cover</figcaption>
             </figure>
             <figure>
-              <img src="/lisa">
+              <img class="img--defered" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="/lisa">
               <figcaption>lisa</figcaption>
             </figure>
             <figure>
-              <img src="/no-yes">
+              <img class="img--defered" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="/no-yes">
               <figcaption>no-yes</figcaption>
             </figure>
             <figure>
-              <img src="/spidermen">
+              <img class="img--defered" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="/spidermen">
               <figcaption>spidermen</figcaption>
             </figure>
             <figure>
-              <img src="/spongeburn">
+              <img class="img--defered" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="/spongeburn">
               <figcaption>spongeburn</figcaption>
             </figure>
             <figure>
-              <img src="/texting">
+              <img class="img--defered" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="/texting">
               <figcaption>texting</figcaption>
             </figure>
             <figure>
-              <img src="/what-have-you-done">
+              <img class="img--defered" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="/what-have-you-done">
               <figcaption>what-have-you-done</figcaption>
             </figure>
             <figure>
-              <img src="/worthless">
+              <img class="img--defered" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="/worthless">
               <figcaption>worthless</figcaption>
             </figure>
           </div>
@@ -179,6 +179,13 @@
           const open = document.getElementById('modal__open');
           close.addEventListener('click', ()=> modal.classList.add('modal--hidden'));
           open.addEventListener('click',() => modal.classList.remove('modal--hidden'));
+          function open_first_click() {
+            Array.from(document.getElementsByClassName('img--defered')).forEach(node => {
+              node.src = node.dataset.src;
+            });
+            open.removeEventListener('click', open_first_click);
+          }
+          open.addEventListener('click', open_first_click);
         })();
       </script>
     </div>
